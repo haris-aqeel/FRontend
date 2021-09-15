@@ -11,10 +11,11 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     fontSize: "30px",
     color: "#2B2B2B",
-    margin: "5px 0px",
+    margin: "3px 0px",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "28px",
+      fontSize: "24px",
       textAlign: "left",
+      lineHeight: "113.5%"
     },
   },
   header: {
@@ -26,13 +27,14 @@ const useStyles = makeStyles((theme) => ({
     MozTextFillColor: "transparent",
     fontFamily: "Mulish",
     fontStyle: "normal",
-    fontWeight: "bold",
+    fontWeight: "900",
     fontSize: "30px",
     color: "#2B2B2B",
-    margin: "5px 0px",
+    margin: "3px 0px",
     [theme.breakpoints.down("sm")]: {
       fontSize: "28px",
       textAlign: "left",
+      lineHeight: "113.5%"
     },
   },
 
@@ -62,6 +64,7 @@ const useStyles = makeStyles((theme) => ({
     filter: "drop-shadow(10px 24px 74px rgba(76, 115, 255, 0.15))",
     [theme.breakpoints.down("sm")]: {
       width: "95%",
+      marginTop: '42px'
     },
   },
   removeSmall: {
