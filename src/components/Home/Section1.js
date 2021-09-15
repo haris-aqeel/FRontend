@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import mobileLogo from "../../assets/images/mobile.png";
 import FilledButton from "../../utilities/FilledButton";
 import UnFilledButton from "../../utilities/UnFilledButton";
+import { useHistory } from "react-router";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -132,6 +133,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ChildComponentA = () => {
   const classes = useStyles();
+  const history = useHistory();
   return (
     <React.Fragment>
       <h1 className={classes.header}>
@@ -144,7 +146,7 @@ const ChildComponentA = () => {
         .
       </p>
       <div className={classes.removeSmall}>
-        <FilledButton buttonText={"Get Started"} />
+        <FilledButton buttonText={"Get Started"} buttonFn={() => history.push('/signup')} />
       </div>
     </React.Fragment>
   );
