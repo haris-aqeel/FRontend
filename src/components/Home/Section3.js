@@ -56,6 +56,11 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "20px",
       lineHeight: "145%",
     },
+    [theme.breakpoints.down("xs")]: {
+      fontSize:'16px',
+      lineHeight:'24px',
+      marginBottom:'32.49px'
+    },
   },
   image: {
     width: "80%",
@@ -65,6 +70,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       width: "95%",
       marginTop: '42px'
+    },
+    [theme.breakpoints.down("xs")]: {
+      marginBottom:'23.43px'
     },
   },
   removeSmall: {

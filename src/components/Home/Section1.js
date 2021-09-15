@@ -17,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
       lineHeight: "36px",
       textAlign: "left",
     },
+    [theme.breakpoints.down("xs")]: {
+      marginBottom: '50px'
+    },
   },
   highlight: {
     backgroundImage: "linear-gradient(97.42deg, #4C73FF 0%, #FF4CD8 100%)",
@@ -40,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       display: "none",
     },
+    
   },
   para1: {
     display: "none",
@@ -62,6 +66,9 @@ const useStyles = makeStyles((theme) => ({
       width: "100%",
       display: "flex",
       justifyContent: "flex-start",
+    },
+    [theme.breakpoints.down("xs")]: {
+      marginTop:'32px'
     },
   },
   removeSmall: {
@@ -88,6 +95,12 @@ const useStyles = makeStyles((theme) => ({
       top: "0px",
       height: "auto",
     },
+    [theme.breakpoints.only("xs")]: {
+      position: "absolute",
+      left: "0px",
+      height: "auto",
+      top: "-35px",
+    },
   },
   box2: {
     position: "absolute",
@@ -106,6 +119,13 @@ const useStyles = makeStyles((theme) => ({
       position: "absolute",
       left: "100px",
       width: "280px",
+    },
+    [theme.breakpoints.only("xs")]: {
+      position: "absolute",
+      left: "20px",
+      height: "auto",
+      bottom: "-15px",
+      marginBottom:'32px'
     },
   },
 }));

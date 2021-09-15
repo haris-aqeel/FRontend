@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       display: "none",
     },
+   
   },
   header1small: {
     fontFamily: "Mulish",
@@ -44,6 +45,9 @@ const useStyles = makeStyles((theme) => ({
     display: "none",
     [theme.breakpoints.down("sm")]: {
       display: "inline-block",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize:'24px'
     },
   },
   header2small: {
@@ -64,6 +68,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       display: "inline-block",
     },
+    [theme.breakpoints.down("xs")]: {
+      marginBottom:'52px',
+      fontSize:'24px'
+    },
   },
 
   para: {
@@ -78,6 +86,11 @@ const useStyles = makeStyles((theme) => ({
       color: "#666666",
       lineHeight: "145%",
     },
+    [theme.breakpoints.down("xs")]: {
+      fontSize:'16px',
+      marginTop:'0px',
+      marginBottom:'18px'
+    },
   },
 
   image: {
@@ -85,6 +98,9 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
     [theme.breakpoints.down("sm")]: {
       width: "100%",
+    },
+    [theme.breakpoints.down("xs")]: {
+      marginBottom:'45.85px',
     },
   },
 }));

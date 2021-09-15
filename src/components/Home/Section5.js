@@ -29,6 +29,10 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "20px",
       color: "#666666",
     },
+    [theme.breakpoints.down("xs")]: {
+      fontSize:'16px',
+      lineHeight:'150%'
+    },
   },
   image: {
     width: "80%",
@@ -120,6 +124,9 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "20px",
       textAlign: "left",
     },
+    [theme.breakpoints.down("xs")]: {
+      fontSize:'24px'
+    },
   },
   gradient: {
     backgroundColor: "#f3ec78",
@@ -138,6 +145,9 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "24px",
       lineHeight: '113.5%',
       textAlign: "left",
+    },
+    [theme.breakpoints.down("xs")]: {
+      marginBottom:'7.4px'
     },
   },
   removeSmall: {
