@@ -12,8 +12,12 @@ const useStyles = makeStyles((theme) => ({
     color: "#2B2B2B",
     margin: "5px 0px",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "32px",
+      fontSize: "24px",
       textAlign: "left",
+      width: "320px",
+      height: "27px",
+      fontWeight: "bold",
+
     },
   },
   header2: {
@@ -30,8 +34,9 @@ const useStyles = makeStyles((theme) => ({
     margin: "5px 0px",
     color: "#2B2B2B",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "35px",
+      fontSize: "24px",
       textAlign: "left",
+      marginTop: '1px'
     },
   },
 

@@ -9,8 +9,11 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-around",
     alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: '20px',
+      paddingRight: '20px'
+    }
   },
-  gridChild: {},
 }));
 
 const GridComponent = ({

@@ -12,6 +12,10 @@ const useStyles = makeStyles((theme) => ({
   },
   header: {
     paddingLeft: theme.spacing(5),
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: "20px",
+      paddingRight: "20px",
+    }
   },
 
   para: {
@@ -108,11 +112,12 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Mulish",
     fontStyle: "normal",
     fontWeight: "bold",
+    lineHeight: '113.5%',
     fontSize: "30px",
     color: "#2B2B2B",
     margin: "5px 0px",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "28px",
+      fontSize: "20px",
       textAlign: "left",
     },
   },
@@ -126,11 +131,12 @@ const useStyles = makeStyles((theme) => ({
     MozTextFillColor: "transparent",
     fontFamily: "Mulish",
     fontStyle: "normal",
-    fontWeight: "bold",
+    fontWeight: "900",
     fontSize: "30px",
-    margin: "5px 0px",
+    margin: "1px 0px",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "28px",
+      fontSize: "24px",
+      lineHeight: '113.5%',
       textAlign: "left",
     },
   },

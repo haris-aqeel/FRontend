@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: "normal",
     fontWeight: "900",
     fontSize: "30px",
-    margin: "5px 0px",
+    margin: "1px 0px",
     display: "none",
     color: "#2B2B2B",
     backgroundImage: "linear-gradient(97.42deg, #4C73FF 0%, #FF4CD8 100%)",
