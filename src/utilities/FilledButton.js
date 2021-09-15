@@ -19,10 +19,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const FilledButton = ({ buttonText, buttonFn }) => {
+const FilledButton = ({ buttonText, buttonFn, type }) => {
   const classes = useStyles();
 
-  return <button className={classes.button}>{buttonText}</button>;
+  return type === "submit" ? (
+    <button className={classes.button} type="submit">
+      {buttonText}
+    </button>
+  ) : (
+    <button className={classes.button} onClick={buttonFn}>
+      {buttonText}
+    </button>
+  );
 };
 
 export default FilledButton;

@@ -1,10 +1,12 @@
-import React, { useState, useEffect, Suspense } from "react";
-import { Redirect, Route, Router, Switch } from "react-router-dom";
+import React, { useState, Suspense } from "react";
+import { Route, Router, Switch } from "react-router-dom";
 import { CssBaseline } from "@material-ui/core";
 import { createBrowserHistory } from "history";
-import Navbar from "./components/Navbar.js";
 import LandingPage from "./pages/LandingPage.js";
-import Footer from "./components/Footer.js";
+import AccountCreation from "./pages/AccountCreation";
+import Navbar from "./components/Wrapper/Navbar.js";
+import Footer from "./components/Wrapper/Footer.js";
+
 // var LandingPage = React.lazy(() => import("./pages/LandingPage.js"));
 
 export const PrivateRoute = ({ component: Component, roles, ...rest }) => (
@@ -17,7 +19,7 @@ export const PrivateRoute = ({ component: Component, roles, ...rest }) => (
 );
 
 export default function Routes() {
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
 
   if (loading) {
     return "Loading..";
@@ -29,6 +31,7 @@ export default function Routes() {
       {/* <Suspense fallback={<h1>"Loading.."</h1>}> */}
       <Switch>
         <Route exact path="/" component={LandingPage} />
+        <Route exact path="/signup" component={AccountCreation} />
       </Switch>
       {/* </Suspense> */}
       <Footer />

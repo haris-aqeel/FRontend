@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@800;900&display=swap");
+
+.grounded-radiants {
+  position: relative;
+  border: 4px solid transparent;
+  border-radius: 30px;
+  background: white;
+  background-clip: padding-box;
+  padding: 14px 28px;
+  text-align: center;
+  height: 48px;
+  min-width: 125px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #2b2b2b;
+  font-family: Mulish;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+}
+
+.grounded-radiants::after {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  left: -4px;
+  right: -4px;
+  background: linear-gradient(97.42deg, #4c73ff 0%, #ff4cd8 100%);
+  content: "";
+  z-index: -1;
+  border-radius: 30px;
+  height: 48px;
+  min-width: 125px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #2b2b2b;
+  font-family: Mulish;
+  cursor: pointer;
+}
+
+.component-center {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.component-paper {
+  width: 850px;
+  height: 530px;
+  padding: 20px 30px;
+  background: #ffffff;
+  box-shadow: 0px 4px 54px rgba(76, 115, 255, 0.1);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.component-form {
+  align-self: flex-start;
+  height: 500px;
+}
+
+.component-header {
+  color: #2b2b2b;
+  font-family: "Mulish", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 113.5%;
+  margin-bottom: 10px;
+}
+
+.component-title {
+  font-family: "Mulish", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 145.5%;
+  color: #666666;
+}
+
+.component-title span {
+  background-image: linear-gradient(97.42deg, #4c73ff 0%, #ff4cd8 100%);
+  background-size: 100%;
+  /* -moz-background-clip: text; */
+  -webkit-text-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.image-create-account {
+  width: 80%;
+}
+
+@media only screen and (max-width: 850px) {
+  .component-image {
+    display: none;
+  }
+}

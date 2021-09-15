@@ -1,8 +1,7 @@
 import React from "react";
-import GridComponent from "../utilities/GridComponent";
+import GridComponent from "../../utilities/GridComponent";
 import { makeStyles } from "@material-ui/core/styles";
-import dblmobileLogo from "../assets/images/dblmobile.png";
-import UnFilledButton from "../utilities/UnFilledButton";
+import dblmobileLogo from "../../assets/images/dblmobile.png";
 
 const useStyles = makeStyles((theme) => ({
   header1: {

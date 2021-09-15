@@ -1,8 +1,8 @@
 import React from "react";
-import GridComponent from "../utilities/GridComponent";
+import GridComponent from "../../utilities/GridComponent";
 import { makeStyles } from "@material-ui/core/styles";
-import bitcoinLogo from "../assets/images/bitcoin.png";
-import networkLogo from "../assets/images/network.png";
+import bitcoinLogo from "../../assets/images/bitcoin.png";
+import networkLogo from "../../assets/images/network.png";
 
 const useStyles = makeStyles((theme) => ({
   highlight: {

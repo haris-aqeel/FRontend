@@ -1,9 +1,9 @@
 import React from "react";
-import GridComponent from "../utilities/GridComponent";
+import GridComponent from "../../utilities/GridComponent";
 import { makeStyles } from "@material-ui/core/styles";
-import mobileLogo from "../assets/images/mobile.png";
-import FilledButton from "../utilities/FilledButton";
-import UnFilledButton from "../utilities/UnFilledButton";
+import mobileLogo from "../../assets/images/mobile.png";
+import FilledButton from "../../utilities/FilledButton";
+import UnFilledButton from "../../utilities/UnFilledButton";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "14px",
       color: "#2B2B2B",
     },
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       display: "none",
     },
   },
@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   removeSmall: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       display: "none",
     },
   },
@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
     backdropFilter: "blur(14px)",
     borderRadius: "10px",
     color: "#000",
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       position: "absolute",
       left: "0px",
       top: "0px",
@@ -102,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "10px",
     color: "#000",
     padding: theme.spacing(2),
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       position: "absolute",
       left: "100px",
       width: "280px",

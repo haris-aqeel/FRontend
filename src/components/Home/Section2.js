@@ -1,8 +1,8 @@
 import React from "react";
-import GridComponent from "../utilities/GridComponent";
+import GridComponent from "../../utilities/GridComponent";
 import { makeStyles } from "@material-ui/core/styles";
-import boardLogo from "../assets/images/board.png";
-import UnFilledButton from "../utilities/UnFilledButton";
+import boardLogo from "../../assets/images/board.png";
+import UnFilledButton from "../../utilities/UnFilledButton";
 
 const useStyles = makeStyles((theme) => ({
   header1: {
