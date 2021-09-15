@@ -39,7 +39,7 @@ const GridComponent = ({
           ? {
               marginBottom: "0",
             }
-          : { marginBottom: "90px" })
+          : { marginBottom: "72px" })
       }
     >
       <Grid item xl={6} md={6} sm={12} xs={12} className={classes.gridChild}>

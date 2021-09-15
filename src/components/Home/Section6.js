@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import '../../utilities/style.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -10,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     height: "800px",
     [theme.breakpoints.down("sm")]: {
       height: "1400px",
+      padding: '0 20px'
     },
   },
 
@@ -27,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       maxWidth: "100%",
       textAlign: "left",
-      paddingLeft: theme.spacing(2),
+      // paddingLeft: theme.spacing(2),
     },
   },
 
@@ -37,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
     width: "90%",
     textAlign: "left",
-    fontSize: "17px",
+    fontSize: "16px",
     color: "grey",
     fontWeight: "#1b1b1b",
     marginTop: "40px",
@@ -50,8 +52,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       minWidth: "0",
     },
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.only("xs")]: {
       minWidth: "0",
+      width:'100%',
+      padding: '0px'
     },
   },
   middleHead: {
@@ -64,6 +68,9 @@ const useStyles = makeStyles((theme) => ({
     MozBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     MozTextFillColor: "transparent",
+    [theme.breakpoints.down("xs")]: {
+      fontSize:'20px'
+    },
   },
   lowerBox: {
     background: "linear-gradient(97.42deg, #4C73FF 0%, #FF4CD8 100%)",
@@ -91,16 +98,21 @@ const useStyles = makeStyles((theme) => ({
   disclamer: {
     marginTop: "10px",
     marginBottom: "55px",
-    fontWeight: "500",
+    fontWeight: "400",
     color: "grey",
     fontSize: "18px",
     textAlign: "left",
     maxWidth: "80vw",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.only("sm")]: {
       marginBottom: "100px",
     },
-    [theme.breakpoints.down("xs")]: {
-      marginBottom: "85px",
+    [theme.breakpoints.only("xs")]: {
+      marginBottom: "50px",
+      fontSize: "14px",
+      lineHeight: "21px",
+      padding: "0px",
+      maxWidth: '100vw'
+
     },
     height: "auto",
   },
@@ -115,7 +127,7 @@ const Section6 = () => {
         Training Series and Tools
       </div>
       <div className={classes.middleBox}>
-        <h2 className={classes.middleHead}>MASTERRIT Academy’s Membership</h2>
+        <h2 className={classes.middleHead}>Masterrit Academy’s Membership</h2>
         <ul>
           <li style={{ paddingBottom: "10px" }}>
             Understanding Bitcoin and Cryptocurrencies
@@ -142,7 +154,7 @@ const Section6 = () => {
         </ul>
       </div>
       <div className={classes.disclamer}>
-        <strong>DISCLAIMER</strong>
+        DISCLAIMER
         <br />
         “Masterrit trainers provide an informational service only and are not
         responsible for any investments made applying this information. The

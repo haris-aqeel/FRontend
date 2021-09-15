@@ -25,13 +25,14 @@ const useStyles = makeStyles((theme) => ({
     color: "#2B2B2B",
     backgroundImage: "linear-gradient(97.42deg, #4C73FF 0%, #FF4CD8 100%)",
     backgroundSize: "100%",
-    fontSize: "30px",
     WebkitBackgroundClip: "text",
     MozBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     MozTextFillColor: "transparent",
     [theme.breakpoints.down("sm")]: {
+
       display: "none",
+
     },
    
   },
@@ -39,10 +40,11 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Mulish",
     fontStyle: "normal",
     fontWeight: "bold",
-    fontSize: "30px",
+    fontSize: "24px",
     color: "#2B2B2B",
-    margin: "5px 0px",
+    margin: "3px 0px",
     display: "none",
+    lineHeight: "113.5%",
     [theme.breakpoints.down("sm")]: {
       display: "inline-block",
     },
@@ -55,9 +57,10 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: "normal",
     fontWeight: "900",
     fontSize: "30px",
-    margin: "1px 0px",
+    margin: "0px 0px",
     display: "none",
     color: "#2B2B2B",
+    lineHeight: "113.5%",
     backgroundImage: "linear-gradient(97.42deg, #4C73FF 0%, #FF4CD8 100%)",
     backgroundSize: "100%",
     fontSize: "30px",
