@@ -6,6 +6,7 @@ body {
   width: 100vw;
   overflow-x: hidden;
   margin: 0;
+  background-color: #fefefe !important;
 }
 
 @media only screen and (max-width: 300px) {

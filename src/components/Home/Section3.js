@@ -106,7 +106,7 @@ const ChildComponentA = () => {
       <div className={classes.removeSmall}>
         <p className={classes.para}>
           We understand that most of people have next to no time to read
-          news/articles to aid their course. GoStarPro will take the stress off
+          news/articles to aid their course. Masterrit will take the stress off
           you with our expert traders and market analysts who do all the
           researches and technical analysis. They come up with sure and on-time
           signals and trading strategies that will make you master ctrading in

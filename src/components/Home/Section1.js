@@ -17,9 +17,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "32px",
       lineHeight: "36px",
       textAlign: "left",
-    },
-    [theme.breakpoints.down("xs")]: {
-      marginBottom: "50px",
+      zIndex: 1000,
     },
   },
   highlight: {
@@ -27,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "100%",
     WebkitBackgroundClip: "text",
     MozBackgroundClip: "text",
+    fontSize: "48px",
     WebkitTextFillColor: "transparent",
     MozTextFillColor: "transparent",
     fontFamily: "Mulish",
@@ -34,8 +33,10 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "900",
     margin: "3px 0px",
     [theme.breakpoints.down("sm")]: {
+      fontSize: "32px",
+      lineHeight: "36px",
       textAlign: "left",
-      lineHeight: "113.5%",
+      zIndex: 1000,
     },
   },
   para: {
@@ -84,6 +85,14 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+  headerController: {
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: "50px",
+      marginTop: "50px",
+      zIndex: 1000,
+    },
+  },
+
   box1: {
     position: "absolute",
     width: "250px",
@@ -143,10 +152,11 @@ const ChildComponentA = () => {
   const history = useHistory();
   return (
     <React.Fragment>
-      <h1 className={classes.header}>
-        THE <span className={classes.highlight}>FASTEST-SROWINL</span> TRADING
-        COMMUNITY
-      </h1>
+      <div className={classes.headerController}>
+        <span className={classes.header}> THE </span>
+        <span className={classes.highlight}>FASTEST-GROWING </span>
+        <span className={classes.header}>TRADING COMMUNITY</span>
+      </div>
       <p className={classes.para}>
         This is where dreams of making a huge fortune from trading become
         reality. Our members enjoys fantastically sure trading real-time signals
