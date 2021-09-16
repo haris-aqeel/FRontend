@@ -10,9 +10,11 @@ import mail from "../../assets/images/mail.png";
 const useStyles = makeStyles((theme) => ({
   secondFooter: {
     display: "flex",
-    justifyContent: "flex-end",
+    justifyContent: "space-evenly",
     alignItems: "center",
     fontWeight: "600",
+    paddingTop: "45px",
+    paddingBottom: "42px",
     [theme.breakpoints.down("sm")]: {
       justifyContent: "space-between",
     },
@@ -89,8 +91,17 @@ const ChildComponentA = () => {
             <img src={footerTextLogo} alt="footer text logo masterrit" />
           </span>
         </li>
-        <li className={classes.responsive}>Privacy Policy</li>
-        <li className={classes.responsive}>Terms & Condition</li>
+
+        <li className={classes.responsive} style={{ paddingBottom: "10px" }}>
+          {window.location.pathname === "/"
+            ? "Privacy Policy"
+            : "info@goprostars.com"}
+        </li>
+        <li className={classes.responsive} style={{ paddingBottom: "10px" }}>
+          {window.location.pathname === "/"
+            ? "Terms & Condition"
+            : "Terms & Conditions"}
+        </li>
       </ul>
     </React.Fragment>
   );
@@ -100,11 +111,17 @@ const ChildComponentB = () => {
   const classes = useStyles();
   return (
     <div className={classes.secondFooter}>
-      <ul className={classes.childBlist}>
-        <li className={classes.ten}>About Us</li>
-        <li className={classes.ten}>Testimonials</li>
-        <li className={classes.ten}>Community</li>
-        <li className={classes.ten}>
+      <ul
+        style={{
+          listStyleType: "none",
+          listStyle: "none",
+          marginRight: "15px",
+        }}
+      >
+        <li style={{ paddingBottom: "10px" }}>About Us</li>
+        <li style={{ paddingBottom: "10px" }}>Testimonials</li>
+        <li style={{ paddingBottom: "10px" }}>Community</li>
+        <li style={{ paddingBottom: "10px" }}>
           <li>Card</li>
         </li>
         <li

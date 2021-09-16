@@ -30,11 +30,8 @@ const useStyles = makeStyles((theme) => ({
     WebkitTextFillColor: "transparent",
     MozTextFillColor: "transparent",
     [theme.breakpoints.down("sm")]: {
-
       display: "none",
-
     },
-   
   },
   header1small: {
     fontFamily: "Mulish",
@@ -49,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
       display: "inline-block",
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize:'24px'
+      fontSize: "24px",
     },
   },
   header2small: {
@@ -72,8 +69,8 @@ const useStyles = makeStyles((theme) => ({
       display: "inline-block",
     },
     [theme.breakpoints.down("xs")]: {
-      marginBottom:'52px',
-      fontSize:'24px'
+      marginBottom: "52px",
+      fontSize: "24px",
     },
   },
 
@@ -90,9 +87,9 @@ const useStyles = makeStyles((theme) => ({
       lineHeight: "145%",
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize:'16px',
-      marginTop:'0px',
-      marginBottom:'18px'
+      fontSize: "16px",
+      marginTop: "0px",
+      marginBottom: "18px",
     },
   },
 
@@ -103,7 +100,7 @@ const useStyles = makeStyles((theme) => ({
       width: "100%",
     },
     [theme.breakpoints.down("xs")]: {
-      marginBottom:'45.85px',
+      marginBottom: "45.85px",
     },
   },
 }));

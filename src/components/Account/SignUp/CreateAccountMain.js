@@ -1,13 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { Paper } from "@material-ui/core";
-import "../../../utilities/style.css";
 import accountcreatepic from "../../../assets/images/createaccount.png";
 import { Form, Formik } from "formik";
 import AccountSignUpForm from "./AccountSignUpForm";
+import { Link } from "react-router-dom";
 // import { validationSchema } from "./Validate";
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+  highlight: {
+    textDecoration: "none",
+    backgroundImage: "linear-gradient(97.42deg, #4C73FF 0%, #FF4CD8 100%)",
+    backgroundSize: "100%",
+    WebkitBackgroundClip: "text",
+    MozBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    MozTextFillColor: "transparent",
+  },
+}));
 
 const CreateAccountMain = () => {
+  const classes = useStyles();
   const [activeStep, setActiveStep] = useState(1);
+
   const [initialValues, setInitialValues] = useState({
     sponsorUserName: "",
     userName: "",
@@ -26,7 +41,10 @@ const CreateAccountMain = () => {
         <div className="component-form">
           <h1 className="component-header">Create your account</h1>
           <small className="component-title">
-            Already have an account?<span>Login</span>
+            Already have an account?
+            <Link to="/signin" className={classes.highlight}>
+              Login
+            </Link>
           </small>
           <Formik
             initialValues={initialValues}
