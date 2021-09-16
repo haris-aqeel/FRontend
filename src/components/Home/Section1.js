@@ -29,6 +29,17 @@ const useStyles = makeStyles((theme) => ({
     MozBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     MozTextFillColor: "transparent",
+    fontFamily: "Mulish",
+    fontStyle: "normal",
+    fontWeight: "900",
+    fontSize: "30px",
+    color: "#2B2B2B",
+    margin: "3px 0px",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "28px",
+      textAlign: "left",
+      lineHeight: "113.5%",
+    },
   },
   para: {
     fontFamily: "Mulish",
