@@ -154,7 +154,9 @@ const ChildComponentA = () => {
     <React.Fragment>
       <div className={classes.headerController}>
         <span className={classes.header}> THE </span>
-        <span className={classes.highlight}>FASTEST-GROWING </span>
+        <span className={classes.highlight}>FASTEST</span>
+        <span className={classes.highlight}>-</span>
+        <span>GROWING </span>
         <span className={classes.header}>TRADING COMMUNITY</span>
       </div>
       <p className={classes.para}>

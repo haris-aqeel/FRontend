@@ -6,7 +6,8 @@ import networkLogo from "../../assets/images/network.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    background: "linear-gradient(180deg, #FEFEFE 0%, #B6C6FE 100%)",
+    background:
+      "linear-gradient(180deg, #FEFEFE 0%, rgb(182 198 254 / 30%) 100%)",
   },
   highlight: {
     backgroundImage: "linear-gradient(97.42deg, #4C73FF 0%, #FF4CD8 100%)",
