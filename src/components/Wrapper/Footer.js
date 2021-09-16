@@ -163,8 +163,12 @@ const ChildComponentB = () => {
             <img src={map} alt="map" />
           </span>
           <span>
-            Lorem Ipsum 12,
-            <br className={classes.breakLine} /> 1342 Lorem
+            71-75 Shelton Street,
+            <br className={classes.breakLine} /> Covent Garden,
+            <br className={classes.breakLine} /> London, United Kingdom,
+            <br className={classes.breakLine} /> WC2H 9JQ
+            <br className={classes.breakLine} />
+            License no. 13621756
           </span>
         </li>
         <li

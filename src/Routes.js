@@ -27,7 +27,7 @@ export default function Routes() {
   return (
     <Router history={createBrowserHistory()}>
       <CssBaseline />
-      <Navbar />
+      {/* <Navbar /> */}
       {/* <Suspense fallback={<h1>"Loading.."</h1>}> */}
       <Switch>
         <Route exact path="/" component={LandingPage} />
