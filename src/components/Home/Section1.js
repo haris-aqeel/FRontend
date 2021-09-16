@@ -32,11 +32,8 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Mulish",
     fontStyle: "normal",
     fontWeight: "900",
-    fontSize: "30px",
-    color: "#2B2B2B",
     margin: "3px 0px",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "28px",
       textAlign: "left",
       lineHeight: "113.5%",
     },
@@ -147,7 +144,7 @@ const ChildComponentA = () => {
   return (
     <React.Fragment>
       <h1 className={classes.header}>
-        THE <span className={classes.highlight}>FASTEST-GROWING</span> TRADING
+        THE <span className={classes.highlight}>FASTEST-SROWINL</span> TRADING
         COMMUNITY
       </h1>
       <p className={classes.para}>
