@@ -3,7 +3,6 @@ import GridComponent from "../../utilities/GridComponent";
 import { makeStyles } from "@material-ui/core/styles";
 import aboutus from "../../assets/images/aboutus.png";
 
-
 const useStyles = makeStyles((theme) => ({
   header: {
     fontFamily: "Mulish",
@@ -32,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "18px",
     lineHeight: "26px",
     color: "#666666",
+    maxWidth: "518px",
     [theme.breakpoints.down("sm")]: {
       fontSize: "14px",
       color: "#2B2B2B",
@@ -54,9 +54,6 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
     filter: "drop-shadow(10px 24px 74px rgba(76, 115, 255, 0.15))",
   },
-
- 
-  
 }));
 
 const ChildComponentA = () => {
@@ -67,9 +64,10 @@ const ChildComponentA = () => {
         ABOUT <span className={classes.highlight}>US</span>
       </h1>
       <p className={classes.para}>
-        Our mission is to provide our customers and affiliates the highest quality products, tools, systems, resources, and everything they need to maximize their cryptocurrency results!
+        Our mission is to provide our customers and affiliates the highest
+        quality products, tools, systems, resources, and everything they need to
+        maximize their cryptocurrency results!
       </p>
-
     </React.Fragment>
   );
 };
@@ -81,12 +79,12 @@ const ChildComponentB = () => {
     <>
       <div style={{ position: "relative" }}>
         <img src={aboutus} alt="mobile" className={classes.image} />
-       
       </div>
       <p className={classes.para1}>
-        Our mission is to provide our customers and affiliates the highest quality products, tools, systems, resources, and everything they need to maximize their cryptocurrency results!
+        Our mission is to provide our customers and affiliates the highest
+        quality products, tools, systems, resources, and everything they need to
+        maximize their cryptocurrency results!
       </p>
-     
     </>
   );
 };

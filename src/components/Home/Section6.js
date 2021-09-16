@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import '../../utilities/style.css'
+import "../../utilities/style.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     height: "800px",
     [theme.breakpoints.down("sm")]: {
       height: "1400px",
-      padding: '0 20px'
+      padding: "0 20px",
     },
   },
 
@@ -54,8 +54,8 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.only("xs")]: {
       minWidth: "0",
-      width:'100%',
-      padding: '0px'
+      width: "100%",
+      padding: "0px",
     },
   },
   middleHead: {
@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
     WebkitTextFillColor: "transparent",
     MozTextFillColor: "transparent",
     [theme.breakpoints.down("xs")]: {
-      fontSize:'20px'
+      fontSize: "20px",
     },
   },
   lowerBox: {
@@ -111,8 +111,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "14px",
       lineHeight: "21px",
       padding: "0px",
-      maxWidth: '100vw'
-
+      maxWidth: "100vw",
     },
     height: "auto",
   },

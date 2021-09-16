@@ -1,12 +1,7 @@
 import React from "react";
 import { makeStyles, Grid } from "@material-ui/core";
 import { Field } from "formik";
-import {
-  renderTextFieldEdit,
-  renderSelectFieldEdit,
-  renderTextArea,
-  CustomCheckBoxComponent,
-} from "../../../utilities/WtFields";
+import { renderTextFieldEdit } from "../../../utilities/WtFields";
 import FilledButton from "../../../utilities/FilledButton";
 
 const useStyles = makeStyles((theme) => ({
@@ -35,50 +30,42 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: "145.5%",
     color: "#666666",
   },
-  step_line: {
-    width: "153px",
-    height: "0px",
-    border: "4px solid #D9D9D9"
-  },
   step_line1: {
-    width: "45.9px",
-    height: "0px",
-    border: "4px solid #4C73FF"
+    width: "153px",
+    height: "4px",
+    background: "linear-gradient(90deg, #4C73FF , 33%, #D9D9D9 66%)",
   },
+
   step_line2: {
-    width: "91.8px",
-    height: "0px",
-    border: "4px solid #4C73FF"
+    width: "153px",
+    height: "4px",
+    background: "linear-gradient(90deg, #4C73FF , 66%, #D9D9D9 33%)",
   },
+
   step_line3: {
     width: "153px",
-    height: "0px",
-    border: "4px solid #4C73FF"
-  }
+    height: "4px",
+    background: "linear-gradient(90deg, #4C73FF , 100%, #D9D9D9 0%)",
+  },
 }));
 
 const AccountSignUpForm = ({ activeStep, setActiveStep, values }) => {
   const checkDisabledButton = () => {
-    if (activeStep === 1){
-      return values.sponsorUserName !== "" && values.userName !==""
-      ?
-      true
-      :
-      false
-    }else if (activeStep === 2){
-      return values.firstName !== "" && values.lastName !=="" && values.email && values.password
-      ?
-      true
-      :
-      false
-    }else{
-      return values.country !== "" && values.dateOfBirth !==""
-      ?
-      true
-      :
-      false
+    if (activeStep === 1) {
+      return values.sponsorUserName !== "" && values.userName !== ""
+        ? false
+        : true;
+    } else if (activeStep === 2) {
+      return values.firstName !== "" &&
+        values.lastName !== "" &&
+        values.email &&
+        values.password
+        ? false
+        : true;
+    } else {
+      return values.country !== "" && values.dateOfBirth !== "" ? false : true;
     }
-  }
+  };
   const classes = useStyles();
   return (
     <React.Fragment>
@@ -95,6 +82,7 @@ const AccountSignUpForm = ({ activeStep, setActiveStep, values }) => {
                     md={12}
                     xs={12}
                   >
+                    {console.log(values)}
                     <Field
                       name="sponsorUserName"
                       label="Sponsor Username"
@@ -223,11 +211,19 @@ const AccountSignUpForm = ({ activeStep, setActiveStep, values }) => {
           className={classes.flexController}
         >
           <Grid item xs={6} xl={6}>
+            {/*  */}
+
             <div>
-                <div className={classes.steps}>Step {activeStep} of 3</div>
-                <div className={classes.step_line}>
-                  <span className={activeStep == 1 ? classes.step_line1: activeStep == 2 ? classes.step_line2 : classes.step_line3}></span>
-                </div>
+              <div className={classes.steps}>Step {activeStep} of 3</div>
+              <div
+                className={
+                  activeStep == 1
+                    ? classes.step_line1
+                    : activeStep == 2
+                    ? classes.step_line2
+                    : classes.step_line3
+                }
+              ></div>
             </div>
           </Grid>
           <Grid item xs={6} xl={6}>
@@ -238,8 +234,8 @@ const AccountSignUpForm = ({ activeStep, setActiveStep, values }) => {
                   ? () => setActiveStep(activeStep + 1)
                   : () => setActiveStep(activeStep)
               }
-              type={activeStep=3 ? "submit": "null"}
-              disabled={() => checkDisabledButton()}
+              type={activeStep >= 3 ? "submit" : "button"}
+              disabled={checkDisabledButton()}
             />
           </Grid>
         </Grid>

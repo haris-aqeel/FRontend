@@ -13,31 +13,30 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-evenly",
     alignItems: "center",
     fontWeight: "600",
-    paddingTop: '45px',
-    paddingBottom: '42px',
+    paddingTop: "45px",
+    paddingBottom: "42px",
     [theme.breakpoints.down("sm")]: {
       justifyContent: "space-between",
-      
     },
   },
   responsive: {
     [theme.breakpoints.down("sm")]: {
       display: "none",
-      paddingBottom: "10px"
+      paddingBottom: "10px",
     },
   },
   responsivedisplay1: {
     display: "none",
-    marginTop: '70px',
+    marginTop: "70px",
     [theme.breakpoints.down("sm")]: {
-      display: 'inline-block'
+      display: "inline-block",
     },
   },
   responsivedisplay2: {
     display: "none",
-    marginTop: '50px',
+    marginTop: "50px",
     [theme.breakpoints.down("sm")]: {
-      display: 'inline-block'
+      display: "inline-block",
     },
   },
   removeText: {
@@ -51,14 +50,14 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "15px",
     [theme.breakpoints.only("xs")]: {
       marginRight: "0px",
-      paddingLeft: "0px"
+      paddingLeft: "0px",
     },
   },
   footerLogo: {
     [theme.breakpoints.only("xs")]: {
       marginRight: "0px",
       paddingLeft: "0px",
-      paddingTop: '30px'
+      paddingTop: "30px",
     },
   },
   childBlist2: {
@@ -67,39 +66,42 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "15px",
     [theme.breakpoints.only("xs")]: {
       marginRight: "0px",
-      paddingLeft: "0px"
+      paddingLeft: "0px",
     },
   },
   ten: {
-    paddingBottom: '10px',
-    fontWeight: 800
-  }
+    paddingBottom: "10px",
+    fontWeight: 800,
+  },
 }));
 
 const ChildComponentA = () => {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <ul style={{ listStyleType: "none", listStyle: "none" }} className={classes.footerLogo}>
+      <ul
+        style={{ listStyleType: "none", listStyle: "none" }}
+        className={classes.footerLogo}
+      >
         <li style={{ paddingBottom: "20px" }}>
           <span>
-            <img src={logo} alt="logo" className={classes.footerLogo}/>
+            <img src={logo} alt="logo" className={classes.footerLogo} />
           </span>
           <span className={classes.removeText}>
             <img src={footerTextLogo} alt="footer text logo masterrit" />
           </span>
         </li>
-      
-          
+
         <li className={classes.responsive} style={{ paddingBottom: "10px" }}>
-          {window.location.pathname === '/'
-          ? "Privacy Policy" : "info@goprostars.com"}
+          {window.location.pathname === "/"
+            ? "Privacy Policy"
+            : "info@goprostars.com"}
         </li>
         <li className={classes.responsive} style={{ paddingBottom: "10px" }}>
-        {window.location.pathname === '/'
-          ? "Terms & Condition" : "Terms & Conditions"}
+          {window.location.pathname === "/"
+            ? "Terms & Condition"
+            : "Terms & Conditions"}
         </li>
-     
       </ul>
     </React.Fragment>
   );
@@ -122,11 +124,12 @@ const ChildComponentB = () => {
         <li style={{ paddingBottom: "10px" }}>
           <li>Card</li>
         </li>
-        <li className={classes.responsivedisplay1} style={{ paddingBottom: "10px" }}>
+        <li
+          className={classes.responsivedisplay1}
+          style={{ paddingBottom: "10px" }}
+        >
           Privacy Policy
         </li>
-        
-
       </ul>
       <ul className={classes.childBlist2}>
         <li className={classes.ten}>Contact Us</li>
@@ -146,9 +149,15 @@ const ChildComponentB = () => {
           <span style={{ marginRight: "8px" }}>
             <img src={map} alt="map" />
           </span>
-          <span>Lorem Ipsum 12,<br/> 1342 Lorem</span>
+          <span>
+            Lorem Ipsum 12,
+            <br /> 1342 Lorem
+          </span>
         </li>
-        <li className={classes.responsivedisplay2} style={{ paddingBottom: "10px" }}>
+        <li
+          className={classes.responsivedisplay2}
+          style={{ paddingBottom: "10px" }}
+        >
           Terms & Condition
         </li>
       </ul>

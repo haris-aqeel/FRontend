@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
       textAlign: "left",
     },
     [theme.breakpoints.down("xs")]: {
-      marginBottom: '50px'
+      marginBottom: "50px",
     },
   },
   highlight: {
@@ -44,7 +44,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       display: "none",
     },
-    
   },
   para1: {
     display: "none",
@@ -69,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: "flex-start",
     },
     [theme.breakpoints.down("xs")]: {
-      marginTop:'32px'
+      marginTop: "32px",
     },
   },
   removeSmall: {
@@ -126,7 +125,7 @@ const useStyles = makeStyles((theme) => ({
       left: "20px",
       height: "auto",
       bottom: "-15px",
-      marginBottom:'32px'
+      marginBottom: "32px",
     },
   },
 }));
@@ -146,7 +145,10 @@ const ChildComponentA = () => {
         .
       </p>
       <div className={classes.removeSmall}>
-        <FilledButton buttonText={"Get Started"} buttonFn={() => history.push('/signup')} />
+        <FilledButton
+          buttonText={"Get Started"}
+          buttonFn={() => history.push("/signup")}
+        />
       </div>
     </React.Fragment>
   );

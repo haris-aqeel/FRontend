@@ -3,11 +3,11 @@ import { Route, Router, Switch } from "react-router-dom";
 import { CssBaseline } from "@material-ui/core";
 import { createBrowserHistory } from "history";
 import LandingPage from "./pages/LandingPage.js";
+import AboutPage from "./pages/AboutPage.js";
 import AccountCreation from "./pages/AccountCreation";
+import AccountLogin from "./pages/AccountLogin.js";
 import Navbar from "./components/Wrapper/Navbar.js";
 import Footer from "./components/Wrapper/Footer.js";
-
-// var LandingPage = React.lazy(() => import("./pages/LandingPage.js"));
 
 export const PrivateRoute = ({ component: Component, roles, ...rest }) => (
   <Route
@@ -31,7 +31,9 @@ export default function Routes() {
       {/* <Suspense fallback={<h1>"Loading.."</h1>}> */}
       <Switch>
         <Route exact path="/" component={LandingPage} />
+        <Route exact path="/about" component={AboutPage} />
         <Route exact path="/signup" component={AccountCreation} />
+        <Route exact path="/signin" component={AccountLogin} />
       </Switch>
       {/* </Suspense> */}
       <Footer />

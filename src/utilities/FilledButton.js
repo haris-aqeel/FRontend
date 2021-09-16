@@ -30,19 +30,28 @@ const useStyles = makeStyles((theme) => ({
     background: "linear-gradient(97.42deg, #4C73FF 0%, #FF4CD8 100%)",
     fontWeight: "bold",
     fontSize: "16px",
-    opacity: 0.5
-  }
+    opacity: 0.5,
+  },
 }));
 
 const FilledButton = ({ buttonText, buttonFn, type, disabled }) => {
   const classes = useStyles();
 
   return type === "submit" ? (
-    <button className={disabled ? classes.buttonDisabled: classes.button} type="submit">
+    <button
+      className={disabled ? classes.buttonDisabled : classes.button}
+      disabled={disabled}
+      type="submit"
+    >
       {buttonText}
     </button>
   ) : (
-    <button className={disabled ? classes.buttonDisabled: classes.button} onClick={buttonFn}>
+    <button
+      className={disabled ? classes.buttonDisabled : classes.button}
+      onClick={buttonFn}
+      disabled={disabled}
+      type="button"
+    >
       {buttonText}
     </button>
   );

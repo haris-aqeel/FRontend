@@ -145,7 +145,7 @@ export default function PrimarySearchAppBar() {
             {window.location.pathname === "/" && (
               <FilledButton
                 buttonText={"Get Started"}
-                buttonFn={() => history.push('/signup')}
+                buttonFn={() => history.push("/signup")}
               />
             )}
           </div>
