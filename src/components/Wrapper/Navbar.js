@@ -9,6 +9,7 @@ import Menu from "@material-ui/core/Menu";
 import DrawerIcon from "../../assets/images/drawer.png";
 import Logo from "../../assets/images/logo.png";
 import FilledButton from "../../utilities/FilledButton";
+import { useHistory } from "react-router";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -69,6 +70,7 @@ export default function PrimarySearchAppBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const history = useHistory();
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -143,9 +145,7 @@ export default function PrimarySearchAppBar() {
             {window.location.pathname === "/" && (
               <FilledButton
                 buttonText={"Get Started"}
-                buttonFn={() => {
-                  console.log("done");
-                }}
+                buttonFn={() => history.push('/signup')}
               />
             )}
           </div>

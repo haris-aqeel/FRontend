@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import mobileLogo from "../../assets/images/mobile.png";
 import FilledButton from "../../utilities/FilledButton";
 import UnFilledButton from "../../utilities/UnFilledButton";
+import { useHistory } from "react-router";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -16,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "32px",
       lineHeight: "36px",
       textAlign: "left",
+    },
+    [theme.breakpoints.down("xs")]: {
+      marginBottom: '50px'
     },
   },
   highlight: {
@@ -40,11 +44,12 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       display: "none",
     },
+    
   },
   para1: {
     display: "none",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "19px",
+      fontSize: "16px",
       color: "#666666",
       display: "inline",
       lineHeight: "145%",
@@ -62,6 +67,9 @@ const useStyles = makeStyles((theme) => ({
       width: "100%",
       display: "flex",
       justifyContent: "flex-start",
+    },
+    [theme.breakpoints.down("xs")]: {
+      marginTop:'32px'
     },
   },
   removeSmall: {
@@ -88,6 +96,12 @@ const useStyles = makeStyles((theme) => ({
       top: "0px",
       height: "auto",
     },
+    [theme.breakpoints.only("xs")]: {
+      position: "absolute",
+      left: "0px",
+      height: "auto",
+      top: "-35px",
+    },
   },
   box2: {
     position: "absolute",
@@ -107,11 +121,19 @@ const useStyles = makeStyles((theme) => ({
       left: "100px",
       width: "280px",
     },
+    [theme.breakpoints.only("xs")]: {
+      position: "absolute",
+      left: "20px",
+      height: "auto",
+      bottom: "-15px",
+      marginBottom:'32px'
+    },
   },
 }));
 
 const ChildComponentA = () => {
   const classes = useStyles();
+  const history = useHistory();
   return (
     <React.Fragment>
       <h1 className={classes.header}>
@@ -124,7 +146,7 @@ const ChildComponentA = () => {
         .
       </p>
       <div className={classes.removeSmall}>
-        <FilledButton buttonText={"Get Started"} />
+        <FilledButton buttonText={"Get Started"} buttonFn={() => history.push('/signup')} />
       </div>
     </React.Fragment>
   );

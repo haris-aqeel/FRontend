@@ -27,10 +27,58 @@ const useStyles = makeStyles((theme) => ({
   marginTop: {
     marginTop: "0.4rem",
   },
+  steps: {
+    fontFamily: "Mulish",
+    fontStyle: "normal",
+    fontWeight: "normal",
+    fontSize: "14px",
+    lineHeight: "145.5%",
+    color: "#666666",
+  },
+  step_line: {
+    width: "153px",
+    height: "0px",
+    border: "4px solid #D9D9D9"
+  },
+  step_line1: {
+    width: "45.9px",
+    height: "0px",
+    border: "4px solid #4C73FF"
+  },
+  step_line2: {
+    width: "91.8px",
+    height: "0px",
+    border: "4px solid #4C73FF"
+  },
+  step_line3: {
+    width: "153px",
+    height: "0px",
+    border: "4px solid #4C73FF"
+  }
 }));
 
 const AccountSignUpForm = ({ activeStep, setActiveStep, values }) => {
-  console.log(activeStep);
+  const checkDisabledButton = () => {
+    if (activeStep === 1){
+      return values.sponsorUserName !== "" && values.userName !==""
+      ?
+      true
+      :
+      false
+    }else if (activeStep === 2){
+      return values.firstName !== "" && values.lastName !=="" && values.email && values.password
+      ?
+      true
+      :
+      false
+    }else{
+      return values.country !== "" && values.dateOfBirth !==""
+      ?
+      true
+      :
+      false
+    }
+  }
   const classes = useStyles();
   return (
     <React.Fragment>
@@ -174,7 +222,14 @@ const AccountSignUpForm = ({ activeStep, setActiveStep, values }) => {
           spacing={2}
           className={classes.flexController}
         >
-          <Grid item xs={6} xl={6}></Grid>
+          <Grid item xs={6} xl={6}>
+            <div>
+                <div className={classes.steps}>Step {activeStep} of 3</div>
+                <div className={classes.step_line}>
+                  <span className={activeStep == 1 ? classes.step_line1: activeStep == 2 ? classes.step_line2 : classes.step_line3}></span>
+                </div>
+            </div>
+          </Grid>
           <Grid item xs={6} xl={6}>
             <FilledButton
               buttonText={activeStep >= 3 ? "Finish" : "Continue"}
@@ -183,7 +238,8 @@ const AccountSignUpForm = ({ activeStep, setActiveStep, values }) => {
                   ? () => setActiveStep(activeStep + 1)
                   : () => setActiveStep(activeStep)
               }
-              // type={activeStep=3 ? "submit": "null"}
+              type={activeStep=3 ? "submit": "null"}
+              disabled={() => checkDisabledButton()}
             />
           </Grid>
         </Grid>

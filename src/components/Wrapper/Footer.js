@@ -17,11 +17,27 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '42px',
     [theme.breakpoints.down("sm")]: {
       justifyContent: "space-between",
+      
     },
   },
   responsive: {
     [theme.breakpoints.down("sm")]: {
       display: "none",
+      paddingBottom: "10px"
+    },
+  },
+  responsivedisplay1: {
+    display: "none",
+    marginTop: '70px',
+    [theme.breakpoints.down("sm")]: {
+      display: 'inline-block'
+    },
+  },
+  responsivedisplay2: {
+    display: "none",
+    marginTop: '50px',
+    [theme.breakpoints.down("sm")]: {
+      display: 'inline-block'
     },
   },
   removeText: {
@@ -29,16 +45,45 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+  childBlist: {
+    listStyleType: "none",
+    listStyle: "none",
+    marginRight: "15px",
+    [theme.breakpoints.only("xs")]: {
+      marginRight: "0px",
+      paddingLeft: "0px"
+    },
+  },
+  footerLogo: {
+    [theme.breakpoints.only("xs")]: {
+      marginRight: "0px",
+      paddingLeft: "0px",
+      paddingTop: '30px'
+    },
+  },
+  childBlist2: {
+    listStyleType: "none",
+    listStyle: "none",
+    marginRight: "15px",
+    [theme.breakpoints.only("xs")]: {
+      marginRight: "0px",
+      paddingLeft: "0px"
+    },
+  },
+  ten: {
+    paddingBottom: '10px',
+    fontWeight: 800
+  }
 }));
 
 const ChildComponentA = () => {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <ul style={{ listStyleType: "none", listStyle: "none" }}>
+      <ul style={{ listStyleType: "none", listStyle: "none" }} className={classes.footerLogo}>
         <li style={{ paddingBottom: "20px" }}>
           <span>
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo" className={classes.footerLogo}/>
           </span>
           <span className={classes.removeText}>
             <img src={footerTextLogo} alt="footer text logo masterrit" />
@@ -77,9 +122,14 @@ const ChildComponentB = () => {
         <li style={{ paddingBottom: "10px" }}>
           <li>Card</li>
         </li>
+        <li className={classes.responsivedisplay1} style={{ paddingBottom: "10px" }}>
+          Privacy Policy
+        </li>
+        
+
       </ul>
-      <ul style={{ listStyleType: "none", listStyle: "none" }}>
-        <li style={{ paddingBottom: "10px" }}>Contact Us</li>
+      <ul className={classes.childBlist2}>
+        <li className={classes.ten}>Contact Us</li>
         <li style={{ paddingBottom: "10px" }}>
           <span style={{ marginRight: "8px" }}>
             <img src={phone} alt="phone" />
@@ -96,9 +146,11 @@ const ChildComponentB = () => {
           <span style={{ marginRight: "8px" }}>
             <img src={map} alt="map" />
           </span>
-          <span>Lorem Ipsum 12, 1342 Lorem</span>
+          <span>Lorem Ipsum 12,<br/> 1342 Lorem</span>
         </li>
-        <li></li>
+        <li className={classes.responsivedisplay2} style={{ paddingBottom: "10px" }}>
+          Terms & Condition
+        </li>
       </ul>
     </div>
   );

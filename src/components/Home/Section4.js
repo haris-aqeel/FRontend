@@ -38,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
       textAlign: "left",
       marginTop: '1px'
     },
+    [theme.breakpoints.down("xs")]: {
+      marginBottom:'32px'
+    },
   },
 
   highlight: {
@@ -52,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: "26px",
     color: "#666666",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "18px",
+      fontSize: "16px",
       color: "#666666",
     },
   },
@@ -73,6 +76,9 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
     [theme.breakpoints.down("sm")]: {
       width: "100%",
+    },
+    [theme.breakpoints.down("xs")]: {
+      marginBottom:'20px'
     },
   },
 }));
