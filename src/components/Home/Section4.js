@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
       width: "320px",
       height: "27px",
       fontWeight: "bold",
-
     },
   },
   header2: {
@@ -36,10 +35,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       fontSize: "24px",
       textAlign: "left",
-      marginTop: '1px'
+      marginTop: "1px",
     },
     [theme.breakpoints.down("xs")]: {
-      marginBottom:'32px'
+      marginBottom: "32px",
     },
   },
 
@@ -78,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
       width: "100%",
     },
     [theme.breakpoints.down("xs")]: {
-      marginBottom:'20px'
+      marginBottom: "20px",
     },
   },
 }));

@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       fontSize: "24px",
       textAlign: "left",
-      lineHeight: "113.5%"
+      lineHeight: "113.5%",
     },
   },
   header: {
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       fontSize: "28px",
       textAlign: "left",
-      lineHeight: "113.5%"
+      lineHeight: "113.5%",
     },
   },
 
@@ -57,9 +57,9 @@ const useStyles = makeStyles((theme) => ({
       lineHeight: "145%",
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize:'16px',
-      lineHeight:'24px',
-      marginBottom:'32.49px'
+      fontSize: "16px",
+      lineHeight: "24px",
+      marginBottom: "32.49px",
     },
   },
   image: {
@@ -69,10 +69,10 @@ const useStyles = makeStyles((theme) => ({
     filter: "drop-shadow(10px 24px 74px rgba(76, 115, 255, 0.15))",
     [theme.breakpoints.down("sm")]: {
       width: "95%",
-      marginTop: '42px'
+      marginTop: "42px",
     },
     [theme.breakpoints.down("xs")]: {
-      marginBottom:'23.43px'
+      marginBottom: "23.43px",
     },
   },
   removeSmall: {

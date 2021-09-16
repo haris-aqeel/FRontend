@@ -10,9 +10,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-around",
     alignItems: "center",
     [theme.breakpoints.down("sm")]: {
-      paddingLeft: '20px',
-      paddingRight: '20px'
-    }
+      paddingLeft: "20px",
+      paddingRight: "20px",
+    },
   },
 }));
 

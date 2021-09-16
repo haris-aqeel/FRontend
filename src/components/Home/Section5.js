@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       paddingLeft: "20px",
       paddingRight: "20px",
-    }
+    },
   },
 
   para: {
@@ -30,8 +30,8 @@ const useStyles = makeStyles((theme) => ({
       color: "#666666",
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize:'16px',
-      lineHeight:'150%'
+      fontSize: "16px",
+      lineHeight: "150%",
     },
   },
   image: {
@@ -116,7 +116,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Mulish",
     fontStyle: "normal",
     fontWeight: "bold",
-    lineHeight: '113.5%',
+    lineHeight: "113.5%",
     fontSize: "30px",
     color: "#2B2B2B",
     margin: "5px 0px",
@@ -125,7 +125,7 @@ const useStyles = makeStyles((theme) => ({
       textAlign: "left",
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize:'24px'
+      fontSize: "24px",
     },
   },
   gradient: {
@@ -143,11 +143,11 @@ const useStyles = makeStyles((theme) => ({
     margin: "1px 0px",
     [theme.breakpoints.down("sm")]: {
       fontSize: "24px",
-      lineHeight: '113.5%',
+      lineHeight: "113.5%",
       textAlign: "left",
     },
     [theme.breakpoints.down("xs")]: {
-      marginBottom:'7.4px'
+      marginBottom: "7.4px",
     },
   },
   removeSmall: {
