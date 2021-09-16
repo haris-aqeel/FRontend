@@ -24,10 +24,12 @@ export default function Routes() {
   if (loading) {
     return "Loading..";
   }
+  console.log(window.location.pathname);
   return (
     <Router history={createBrowserHistory()}>
       <CssBaseline />
-      {/* <Navbar /> */}
+      {window.location.pathname !== "/" && <Navbar />}
+
       {/* <Suspense fallback={<h1>"Loading.."</h1>}> */}
       <Switch>
         <Route exact path="/" component={LandingPage} />
