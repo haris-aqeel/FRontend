@@ -24,10 +24,12 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: "linear-gradient(97.42deg, #4C73FF 0%, #FF4CD8 100%)",
     backgroundSize: "100%",
     WebkitBackgroundClip: "text",
+
     MozBackgroundClip: "text",
     fontSize: "48px",
     WebkitTextFillColor: "transparent",
     MozTextFillColor: "transparent",
+
     fontFamily: "Mulish",
     fontStyle: "normal",
     fontWeight: "900",
@@ -156,7 +158,7 @@ const ChildComponentA = () => {
         <span className={classes.header}> THE </span>
         <span className={classes.highlight}>FASTEST</span>
         <span className={classes.highlight}>-</span>
-        <span>GROWING </span>
+        <span className={classes.highlight}>GROWING </span>
         <span className={classes.header}>TRADING COMMUNITY</span>
       </div>
       <p className={classes.para}>
