@@ -16,6 +16,10 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     fontSize: "16px",
     cursor: "pointer",
+    [theme.breakpoints.only("xs")]: {
+      fontSize: "12px",
+      padding: "10px 18px",
+    },
   },
   buttonDisabled: {
     height: "48px",
@@ -31,6 +35,10 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     fontSize: "16px",
     opacity: 0.5,
+    [theme.breakpoints.only("xs")]: {
+      fontSize: "10px",
+      padding: "10px 18px",
+    },
   },
 }));
 

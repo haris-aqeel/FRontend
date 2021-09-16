@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles, Grid } from "@material-ui/core";
 import { Field } from "formik";
 import { renderTextFieldEdit } from "../../../utilities/WtFields";
@@ -47,26 +47,60 @@ const useStyles = makeStyles((theme) => ({
     height: "4px",
     background: "linear-gradient(90deg, #4C73FF , 100%, #D9D9D9 0%)",
   },
+  button: {
+    background: "none!important",
+    border: "none",
+    padding: "0!important",
+    color: "#4C73FF",
+    cursor: "pointer",
+    position: "absolute",
+    left: "270px",
+    top: "20px",
+  },
+  manageFootForm: {
+    display: "flex",
+    alignItems: "center",
+  },
 }));
 
-const AccountSignUpForm = ({ activeStep, setActiveStep, values }) => {
+const AccountSignUpForm = ({
+  activeStep,
+  setActiveStep,
+  values,
+  errors,
+  touched,
+}) => {
   const checkDisabledButton = () => {
     if (activeStep === 1) {
-      return values.sponsorUserName !== "" && values.userName !== ""
-        ? false
-        : true;
+      return values.sponsorUserName === "" ||
+        values.userName === "" ||
+        (touched.sponsorUserName && errors.sponsorUserName) ||
+        (touched.userName && errors.userName)
+        ? true
+        : false;
     } else if (activeStep === 2) {
-      return values.firstName !== "" &&
-        values.lastName !== "" &&
-        values.email &&
-        values.password
-        ? false
-        : true;
+      return values.firstName === "" ||
+        values.lastName === "" ||
+        values.email === "" ||
+        values.password === "" ||
+        (touched.firstName && errors.firstName) ||
+        (touched.lastName && errors.lastName) ||
+        (touched.email && errors.email) ||
+        (touched.password && errors.password)
+        ? true
+        : false;
     } else {
-      return values.country !== "" && values.dateOfBirth !== "" ? false : true;
+      return values.country === "" ||
+        values.dateOfBirth === "" ||
+        (touched.country && errors.country) ||
+        (touched.dateOfBirth && errors.dateOfBirth)
+        ? true
+        : false;
     }
   };
   const classes = useStyles();
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <React.Fragment>
       <Grid container style={{ marginTop: "20px" }} className={classes.flex}>
@@ -150,6 +184,7 @@ const AccountSignUpForm = ({ activeStep, setActiveStep, values }) => {
                   </Grid>
                   <Grid
                     className={classes.marginTop}
+                    style={{ position: "relative" }}
                     item
                     xl={12}
                     md={12}
@@ -158,8 +193,18 @@ const AccountSignUpForm = ({ activeStep, setActiveStep, values }) => {
                     <Field
                       name="password"
                       label="Password"
+                      type={showPassword ? "text" : "password"}
                       component={renderTextFieldEdit}
                     />{" "}
+                    {values.password && (
+                      <button
+                        type="button"
+                        className={classes.button}
+                        onClick={() => setShowPassword(!showPassword)}
+                      >
+                        {!showPassword ? "Show" : "Hide"}
+                      </button>
+                    )}
                   </Grid>
                 </Grid>
               );
@@ -207,26 +252,24 @@ const AccountSignUpForm = ({ activeStep, setActiveStep, values }) => {
           item
           xl={12}
           xs={12}
-          spacing={2}
+          spacing={0}
           className={classes.flexController}
         >
-          <Grid item xs={6} xl={6}>
+          <Grid item xs={12} sm={6} xl={6}>
             {/*  */}
 
-            <div>
-              <div className={classes.steps}>Step {activeStep} of 3</div>
-              <div
-                className={
-                  activeStep == 1
-                    ? classes.step_line1
-                    : activeStep == 2
-                    ? classes.step_line2
-                    : classes.step_line3
-                }
-              ></div>
-            </div>
+            <div className={classes.steps}>Step {activeStep} of 3</div>
+            <div
+              className={
+                activeStep == 1
+                  ? classes.step_line1
+                  : activeStep == 2
+                  ? classes.step_line2
+                  : classes.step_line3
+              }
+            ></div>
           </Grid>
-          <Grid item xs={6} xl={6}>
+          <Grid item xs={12} sm={6} xl={6}>
             <FilledButton
               buttonText={activeStep >= 3 ? "Finish" : "Continue"}
               buttonFn={

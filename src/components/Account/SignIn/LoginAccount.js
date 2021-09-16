@@ -6,8 +6,8 @@ import { Form, Formik, Field } from "formik";
 import { Link } from "react-router-dom";
 import { renderTextFieldEdit } from "../../../utilities/WtFields";
 import FilledButton from "../../../utilities/FilledButton";
+import { loginValidationSchema } from "../SignUp/Validate";
 
-// import { validationSchema } from "./Validate";
 const useStyles = makeStyles((theme) => ({
   highlight: {
     textDecoration: "none",
@@ -43,7 +43,7 @@ const LoginAccountMain = () => {
           </small>
           <Formik
             initialValues={initialValues}
-            // validationSchema={validationSchema}
+            validationSchema={loginValidationSchema}
             enableReinitialize={true}
             onSubmit={(values, { resetForm }) => {
               submitForm(values);
@@ -52,7 +52,7 @@ const LoginAccountMain = () => {
               });
             }}
           >
-            {({ values }) => (
+            {({ values, errors, touched }) => (
               <Form
                 style={{
                   display: "flex",
@@ -121,9 +121,9 @@ const LoginAccountMain = () => {
                         buttonText="Log In"
                         type="submit"
                         disabled={
-                          values.userName !== "" && values.password !== ""
-                            ? false
-                            : true
+                          values.userName === "" || values.password === ""
+                            ? true
+                            : false
                         }
                       />
                     </Grid>

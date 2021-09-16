@@ -1,5 +1,21 @@
-body {
-  margin: 0;
+* {
   font-family: "Mulish", sans-serif;
+}
+
+body {
+  width: 100vw;
   overflow-x: hidden;
+  margin: 0;
+}
+
+@media only screen and (max-width: 300px) {
+  body {
+    width: 120vw;
+  }
+}
+
+@media only screen and (max-width: 250px) {
+  body {
+    width: 130vw;
+  }
 }

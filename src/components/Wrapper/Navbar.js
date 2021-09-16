@@ -10,6 +10,7 @@ import DrawerIcon from "../../assets/images/drawer.png";
 import Logo from "../../assets/images/logo.png";
 import FilledButton from "../../utilities/FilledButton";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -106,9 +107,6 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <p>Testimonials</p>
-      </MenuItem>
-      <MenuItem>
         <p>Notifications</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
@@ -126,7 +124,11 @@ export default function PrimarySearchAppBar() {
       >
         <Toolbar>
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
+            <IconButton
+              aria-label="show 4 new mails"
+              color="inherit"
+              onClick={() => history.push("/")}
+            >
               <img src={Logo} />
             </IconButton>
             <Typography className={classes.title} variant="h6" noWrap>
@@ -159,7 +161,11 @@ export default function PrimarySearchAppBar() {
             >
               <img src={DrawerIcon} />
             </IconButton>
-            <IconButton aria-label="show 4 new mails" color="inherit">
+            <IconButton
+              aria-label="show 4 new mails"
+              color="inherit"
+              onClick={() => history.push("/")}
+            >
               <img src={Logo} />
             </IconButton>
           </div>

@@ -13,6 +13,10 @@ const useStyles = makeStyles((theme) => ({
       height: "1400px",
       padding: "0 20px",
     },
+    [theme.breakpoints.down("xs")]: {
+      padding: "0 15px",
+      margin: "0px",
+    },
   },
 
   upperBox: {
@@ -68,6 +72,7 @@ const useStyles = makeStyles((theme) => ({
     MozBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     MozTextFillColor: "transparent",
+    marginBottom: "0px",
     [theme.breakpoints.down("xs")]: {
       fontSize: "20px",
     },
@@ -125,7 +130,7 @@ const Section6 = () => {
         Learn the Secrets to Maximize Your Results with GPS Academy’s EXCLUSIVE
         Training Series and Tools
       </div>
-      <div className={classes.middleBox}>
+      <div className="box-two">
         <h2 className={classes.middleHead}>Masterrit Academy’s Membership</h2>
         <ul>
           <li style={{ paddingBottom: "10px" }}>

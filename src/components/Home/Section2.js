@@ -126,9 +126,9 @@ const ChildComponentB = () => {
       <p className={classes.para}>
         Mastrerrit was birthed out of personal hunger to make a difference in
         the world of trading. We understand that information is vital in
-        achieving success in cryptocurrency and forex; that’s why we started X.
-        We have built an army of highly successful crypto and forex traders with
-        mouth-watering testimonies.
+        achieving success in cryptocurrency and forex; that’s why we started
+        Masterrit. We have built an army of highly successful crypto and forex
+        traders with mouth-watering testimonies.
       </p>
       <p className={classes.para}>
         Join the largest trading community now and become one of our

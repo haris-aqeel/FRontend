@@ -13,6 +13,10 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: "20px",
       paddingRight: "20px",
     },
+    [theme.breakpoints.only("xs")]: {
+      paddingLeft: "13px",
+      paddingRight: "13px",
+    },
   },
 }));
 

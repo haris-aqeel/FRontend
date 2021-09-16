@@ -6,6 +6,7 @@ import footerTextLogo from "../../assets/images/footerText.png";
 import phone from "../../assets/images/phone.png";
 import map from "../../assets/images/map.png";
 import mail from "../../assets/images/mail.png";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   secondFooter: {
@@ -73,6 +74,16 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "10px",
     fontWeight: 800,
   },
+  breakLine: {
+    display: "none",
+    [theme.breakpoints.down("sm")]: {
+      display: "inline-block",
+    },
+  },
+  link: {
+    textDecoration: "none",
+    color: "#fff",
+  },
 }));
 
 const ChildComponentA = () => {
@@ -85,10 +96,14 @@ const ChildComponentA = () => {
       >
         <li style={{ paddingBottom: "20px" }}>
           <span>
-            <img src={logo} alt="logo" className={classes.footerLogo} />
+            <Link to="/">
+              <img src={logo} alt="logo" className={classes.footerLogo} />
+            </Link>
           </span>
           <span className={classes.removeText}>
-            <img src={footerTextLogo} alt="footer text logo masterrit" />
+            <Link to="/">
+              <img src={footerTextLogo} alt="footer text logo masterrit" />
+            </Link>
           </span>
         </li>
 
@@ -111,14 +126,12 @@ const ChildComponentB = () => {
   const classes = useStyles();
   return (
     <div className={classes.secondFooter}>
-      <ul
-        style={{
-          listStyleType: "none",
-          listStyle: "none",
-          marginRight: "15px",
-        }}
-      >
-        <li style={{ paddingBottom: "10px" }}>About Us</li>
+      <ul className={classes.childBlist}>
+        <li style={{ paddingBottom: "10px" }}>
+          <Link to="/about" className={classes.link}>
+            About Us
+          </Link>
+        </li>
         <li style={{ paddingBottom: "10px" }}>Testimonials</li>
         <li style={{ paddingBottom: "10px" }}>Community</li>
         <li style={{ paddingBottom: "10px" }}>
@@ -151,7 +164,7 @@ const ChildComponentB = () => {
           </span>
           <span>
             Lorem Ipsum 12,
-            <br /> 1342 Lorem
+            <br className={classes.breakLine} /> 1342 Lorem
           </span>
         </li>
         <li

@@ -5,6 +5,9 @@ import bitcoinLogo from "../../assets/images/bitcoin.png";
 import networkLogo from "../../assets/images/network.png";
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    background: "linear-gradient(180deg, #FEFEFE 0%, #4C73FF 245.04%)",
+  },
   highlight: {
     backgroundImage: "linear-gradient(97.42deg, #4C73FF 0%, #FF4CD8 100%)",
     backgroundClip: "text",
@@ -50,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
     background: "rgba(255, 255, 255, 0.7)",
     boxShadow: "2px 2px 10px #b9b9b9",
     boxSizing: "border-box",
-    backdropFilter: "blur(14px)",
+    // backdropFilter: "blur(14px)",
     borderRadius: "10px",
     fontSize: "15px",
     lineHeight: "150%",
@@ -70,7 +73,6 @@ const useStyles = makeStyles((theme) => ({
     background: "rgba(255, 255, 255, 0.7)",
     boxShadow: "2px 2px 10px #b9b9b9",
     boxSizing: "border-box",
-    backdropFilter: "blur(14px)",
     borderRadius: "10px",
     fontSize: "15px",
     lineHeight: "150%",
@@ -78,7 +80,8 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     left: "70px",
     bottom: "50px",
-    zIndex: 0,
+    zIndex: "auto",
+    position: "relative",
     [theme.breakpoints.down("sm")]: {
       position: "static",
       textAlign: "center",
@@ -106,7 +109,7 @@ const useStyles = makeStyles((theme) => ({
 
   bitcoinBox: {
     background: "rgba(246, 246, 246, 0.7)",
-    backdropFilter: "blur(14px)",
+    // backdropFilter: "blur(14px)",
     borderRadius: "10px",
     fontSize: "15px",
     lineHeight: "150%",
@@ -193,12 +196,7 @@ const ChildComponentA = () => {
         style={{ zIndex: 10 }}
       />
       <div className={classes.boxTwo}>
-        <img
-          src={bitcoinLogo}
-          alt="bitcoin"
-          className={classes.smallBitcoin}
-          style={{ zIndex: 10 }}
-        />
+        <img src={bitcoinLogo} alt="bitcoin" className={classes.smallBitcoin} />
         <p>
           We accept cryptocurrency as our fees and your earnings can also be
           paid with cryptocurrency. Dynamism and integrity stand us out from all
@@ -224,11 +222,7 @@ const Top = () => {
   const classes = useStyles();
 
   return (
-    <div
-      style={{
-        background: "linear-gradient(180deg, #FEFEFE 0%, #4C73FF 245.04%)",
-      }}
-    >
+    <div className={classes.root}>
       <div className={classes.header}>
         <p className={classes.header1}>LET'S WORK TOGETHER </p>
         <p className={classes.header1}>TO IMPROVE YOUR NET WORTH </p>

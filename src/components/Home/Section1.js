@@ -156,6 +156,7 @@ const ChildComponentA = () => {
 
 const ChildComponentB = () => {
   const classes = useStyles();
+  const history = useHistory();
 
   return (
     <>
@@ -178,9 +179,7 @@ const ChildComponentB = () => {
       <div className={classes.smallButtons}>
         <FilledButton
           buttonText={"Get Started"}
-          buttonFn={() => {
-            console.log("done");
-          }}
+          buttonFn={() => history.push("/signup")}
         />
         <span style={{ width: "20px" }}></span>
         <UnFilledButton

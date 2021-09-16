@@ -4,8 +4,9 @@ import accountcreatepic from "../../../assets/images/createaccount.png";
 import { Form, Formik } from "formik";
 import AccountSignUpForm from "./AccountSignUpForm";
 import { Link } from "react-router-dom";
-// import { validationSchema } from "./Validate";
+import { validationSchema } from "./Validate";
 import { makeStyles } from "@material-ui/core";
+import "../../../utilities/style.css";
 
 const useStyles = makeStyles((theme) => ({
   highlight: {
@@ -43,12 +44,12 @@ const CreateAccountMain = () => {
           <small className="component-title">
             Already have an account?
             <Link to="/signin" className={classes.highlight}>
-              Login
+              {"   "}Login
             </Link>
           </small>
           <Formik
             initialValues={initialValues}
-            // validationSchema={validationSchema}
+            validationSchema={validationSchema}
             enableReinitialize={true}
             onSubmit={(values, { resetForm }) => {
               submitForm(values);
@@ -57,7 +58,7 @@ const CreateAccountMain = () => {
               });
             }}
           >
-            {({ values }) => (
+            {({ values, errors, touched }) => (
               <Form
                 style={{
                   display: "flex",
@@ -69,6 +70,8 @@ const CreateAccountMain = () => {
                   activeStep={activeStep}
                   setActiveStep={setActiveStep}
                   values={values}
+                  errors={errors}
+                  touched={touched}
                 />
               </Form>
             )}

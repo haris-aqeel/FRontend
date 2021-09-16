@@ -22,6 +22,7 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  margin-right: 0px;
 }
 
 .grounded-radiants::after {
@@ -53,7 +54,7 @@
 
 .component-paper {
   width: 926px;
-  height: 548px;
+  height: 528px;
   padding: 20px 30px;
   background: #ffffff;
   box-shadow: 0px 4px 54px rgba(76, 115, 255, 0.1);
@@ -100,8 +101,87 @@
   width: 100%;
 }
 
+.box-two {
+  margin-top: 40px;
+  max-width: 720px;
+  min-height: 250px;
+  border: double 4px transparent;
+  border-radius: 30px;
+  background-image: linear-gradient(white, white),
+    linear-gradient(97.42deg, #4c73ff 0%, #ff4cd8 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  padding: 30px;
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  color: "#666666";
+  font-size: 16px;
+}
+
+/* .box-two{
+    background: #FEFEFE;
+    backdrop-filter: blur(44px);
+    padding: 30px;
+    width: 90%;
+    text-align: left;
+    font-size: 16px;
+    color: grey;
+    font-weight: #1b1b1b;
+    margin-top: 40px;
+    border-image-slice: 3;
+    border-image-source: linear-gradient(97.42deg, #4C73FF 0%, #FF4CD8 100%);
+    max-width: 720px;
+    position: relative;
+    border: 3px solid transparent;
+    border-radius: 30px;
+    background-clip: padding-box;
+    line-height: 20px;
+    left: 0px;
+    right: 0px;
+    margin-right: 0px;
+}
+
+
+.box-two::after {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  left: -3px;
+  right: -3px;
+  background: linear-gradient(97.42deg, #4c73ff 0%, #ff4cd8 100%);
+  content: "";
+  z-index: -1;
+  border-radius: 30px;
+  max-width: 710px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #2b2b2b;
+  font-family: Mulish;
+  cursor: pointer;
+} */
+
 @media only screen and (max-width: 850px) {
   .component-image {
     display: none;
+  }
+
+  .box-two {
+    min-width: 0;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .grounded-radiants {
+    font-size: 12px;
+    padding: 14px 22px;
+  }
+  .box-two {
+    min-width: 0;
+    width: 100%;
+    padding: 5px;
+    margin-top: 0px;
   }
 }

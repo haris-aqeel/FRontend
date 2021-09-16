@@ -86,6 +86,14 @@ const useStyles = makeStyles((theme) => ({
       display: "inline-block",
     },
   },
+  centerSmall: {
+    [theme.breakpoints.down("xs")]: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      margin: "0 auto",
+    },
+  },
 }));
 
 const ChildComponentA = () => {
@@ -104,6 +112,7 @@ const ChildComponentA = () => {
           signals and trading strategies that will make you master ctrading in
           no time.
         </p>
+
         <UnFilledButton
           buttonText={"Join our network now and be wowed."}
           buttonFn={() => {
@@ -130,7 +139,7 @@ const ChildComponentB = () => {
           signals and trading strategies that will make you master ctrading in
           no time.
         </p>
-        <div style={{ textAlign: "center" }}>
+        <div style={{ display: "flex", justifyContent: "center" }}>
           <UnFilledButton
             buttonText={"Join our network now and be wowed."}
             buttonFn={() => {
