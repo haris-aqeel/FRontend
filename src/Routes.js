@@ -24,11 +24,9 @@ export default function Routes() {
   if (loading) {
     return "Loading..";
   }
-  console.log(window.location.pathname);
   return (
     <Router history={createBrowserHistory()}>
       <CssBaseline />
-      {window.location.pathname !== "/" && <Navbar />}
 
       {/* <Suspense fallback={<h1>"Loading.."</h1>}> */}
       <Switch>

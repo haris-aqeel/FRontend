@@ -337,14 +337,23 @@ export const renderSelectFieldEdit = ({
     error={hasEditErrorMessage(touched, errors, field)}
     variant="outlined"
     fullWidth={true}
+    InputProps={{
+      style: {
+        color: "#2B2B2B",
+        backgroundColor: "#fff",
+      },
+    }}
+    InputLabelProps={{
+      style: {
+        color: "#666666",
+      },
+    }}
   >
-    <InputLabel htmlFor="outlined-age-native-simple" style={{ color: "#ccc" }}>
-      {placeholder}
+    <InputLabel htmlFor="outlined-age-native-simple">
+      {props.label && props.label}
     </InputLabel>
 
     <Select
-      style={{ color: "#ccc" }}
-      color="#ccc"
       native
       {...field}
       {...props}

@@ -7,6 +7,7 @@ import UnFilledButton from "../../utilities/UnFilledButton";
 import { useHistory } from "react-router";
 import lines1 from "../../assets/images/lines1.png";
 import Navbar from "../../components/Wrapper/Navbar";
+import "../../utilities/style.css";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -153,7 +154,10 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     left: "100px",
     [theme.breakpoints.only("lg")]: {
-      left: "560px",
+      display: "none",
+    },
+    [theme.breakpoints.only("md")]: {
+      display: "none",
     },
     [theme.breakpoints.only("xl")]: {
       left: "1160px",
@@ -162,11 +166,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       display: "none",
     },
-    //   [theme.breakpoints.only("xl")]: {
-    //     backgroundImage: `url(${lines1})`,
-    //     backgroundSize: '911px 1183px',
-    //     backgroundRepeat: 'no-repeat'
-    //  },
   },
   imageLine: {
     width: "90%",
@@ -246,7 +245,6 @@ const Top = () => {
       <div className={classes.applyBackground}>
         <img src={lines1} className={classes.imageLine} />
       </div>
-
       <Navbar />
 
       <GridComponent

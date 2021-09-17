@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { makeStyles, Grid } from "@material-ui/core";
 import { Field } from "formik";
-import { renderTextFieldEdit } from "../../../utilities/WtFields";
+import {
+  renderTextFieldEdit,
+  renderSelectFieldEdit,
+} from "../../../utilities/WtFields";
 import FilledButton from "../../../utilities/FilledButton";
+import countryFlagEmoji from "country-flag-emoji";
+import { generateArrayOfYears } from "../../../utilities/generateArrayOfYears";
 
 const useStyles = makeStyles((theme) => ({
   marginBottom: {
@@ -91,15 +96,103 @@ const AccountSignUpForm = ({
         : false;
     } else {
       return values.country === "" ||
-        values.dateOfBirth === "" ||
+        values.date === "" ||
+        values.month === "" ||
+        values.year === "" ||
         (touched.country && errors.country) ||
-        (touched.dateOfBirth && errors.dateOfBirth)
+        (touched.date && errors.date) ||
+        (touched.month && errors.month) ||
+        (touched.year && errors.year)
         ? true
         : false;
     }
   };
   const classes = useStyles();
+  const [setOfYears, setYears] = useState([]);
+
+  React.useEffect(() => {
+    setYears(generateArrayOfYears());
+  }, []);
   const [showPassword, setShowPassword] = useState(false);
+  // const [year] = useState([
+  //   "2020",
+  //   "2019",
+  //   "2018",
+  //   "2017",
+  //   "2016",
+  //   "2015",
+  //   "2014",
+  //   "2013",
+  //   "2012",
+  //   "2011",
+  //   "2010",
+  //   "2009",
+  //   "2008",
+  //   "2007",
+  //   "2006",
+  //   "2005",
+  //   "2004",
+  //   "2003",
+  //   "2002",
+  //   "2001",
+  //   "2000",
+  //   "1999",
+  //   "1998",
+  //   "1997",
+  //   "1996",
+  //   "1995",
+  //   "1994",
+  //   "1993",
+  //   "1992",
+  //   "1991",
+  //   "1990",])
+
+  const [month] = useState([
+    "01",
+    "02",
+    "03",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+  ]);
+
+  const [dates] = useState([
+    "01",
+    "02",
+    "03",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+  ]);
 
   return (
     <React.Fragment>
@@ -215,6 +308,7 @@ const AccountSignUpForm = ({
                 <Grid item xl={12} md={12} sm={12}>
                   <Grid
                     className={classes.marginTop}
+                    style={{ marginBottom: "10px" }}
                     item
                     xl={12}
                     md={12}
@@ -223,21 +317,78 @@ const AccountSignUpForm = ({
                     <Field
                       name="country"
                       label="Your Country"
-                      component={renderTextFieldEdit}
-                    />{" "}
+                      component={renderSelectFieldEdit}
+                    >
+                      {" "}
+                      {countryFlagEmoji.list.map((data) => {
+                        return (
+                          <option value={data.name}>
+                            {data.emoji} {"  "} {data.name}{" "}
+                          </option>
+                        );
+                      })}
+                    </Field>
                   </Grid>
+                  <span style={{ marginTop: "35px" }}>Date Of Birth</span>
                   <Grid
-                    className={classes.marginTop}
                     item
+                    style={{ display: "flex", justifyContent: "space-between" }}
                     xl={12}
                     md={12}
                     xs={12}
                   >
-                    <Field
-                      name="dateOfBirth"
-                      label="Date Of Birth"
-                      component={renderTextFieldEdit}
-                    />{" "}
+                    <Grid
+                      className={classes.marginTop}
+                      item
+                      xl={3}
+                      md={3}
+                      xs={3}
+                    >
+                      <Field
+                        name="date"
+                        placeholder="01"
+                        component={renderSelectFieldEdit}
+                      >
+                        {dates.map((data) => {
+                          return <option value={data}>{data}</option>;
+                        })}
+                      </Field>{" "}
+                    </Grid>
+                    <Grid
+                      className={classes.marginTop}
+                      item
+                      xl={3}
+                      md={3}
+                      xs={3}
+                    >
+                      <Field
+                        name="month"
+                        placeholder="03"
+                        component={renderSelectFieldEdit}
+                      >
+                        {month.map((data) => {
+                          return <option value={data}>{data}</option>;
+                        })}
+                      </Field>{" "}
+                    </Grid>
+                    <Grid
+                      className={classes.marginTop}
+                      item
+                      xl={4}
+                      md={4}
+                      xs={4}
+                    >
+                      <Field
+                        name="year"
+                        placeholder="2003"
+                        component={renderSelectFieldEdit}
+                      >
+                        {" "}
+                        {setOfYears.map((data) => {
+                          return <option value={data}>{data}</option>;
+                        })}
+                      </Field>
+                    </Grid>
                   </Grid>
                 </Grid>
               );

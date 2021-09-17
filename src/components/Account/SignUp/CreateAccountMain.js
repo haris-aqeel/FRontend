@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 const CreateAccountMain = () => {
   const classes = useStyles();
-  const [activeStep, setActiveStep] = useState(1);
+  const [activeStep, setActiveStep] = useState(3);
 
   const [initialValues, setInitialValues] = useState({
     sponsorUserName: "",
@@ -32,7 +32,9 @@ const CreateAccountMain = () => {
     email: "",
     password: "",
     country: "",
-    dateOfBirth: "",
+    date: "",
+    month: "",
+    year: "",
   });
   const submitForm = () => {};
 

@@ -33,7 +33,9 @@ export const validationSchema = yup.object().shape({
     .min(8, "Password is too short - should be 8 chars minimum.")
     .matches(PASSWORD_VALIDATIONS, "Password must contain a number."),
   country: yup.string().required("Country is required."),
-  dateOfBirth: yup.string().required("Date Of Birth is required."),
+  date: yup.string().required("Date is required."),
+  month: yup.string().required("Month is required."),
+  year: yup.string().required("Year is required."),
 });
 
 export const loginValidationSchema = yup.object().shape({

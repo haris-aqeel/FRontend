@@ -121,48 +121,6 @@
   font-size: 16px;
 }
 
-/* .box-two{
-    background: #FEFEFE;
-    backdrop-filter: blur(44px);
-    padding: 30px;
-    width: 90%;
-    text-align: left;
-    font-size: 16px;
-    color: grey;
-    font-weight: #1b1b1b;
-    margin-top: 40px;
-    border-image-slice: 3;
-    border-image-source: linear-gradient(97.42deg, #4C73FF 0%, #FF4CD8 100%);
-    max-width: 720px;
-    position: relative;
-    border: 3px solid transparent;
-    border-radius: 30px;
-    background-clip: padding-box;
-    line-height: 20px;
-    left: 0px;
-    right: 0px;
-    margin-right: 0px;
-}
-
-
-.box-two::after {
-  position: absolute;
-  top: -3px;
-  bottom: -3px;
-  left: -3px;
-  right: -3px;
-  background: linear-gradient(97.42deg, #4c73ff 0%, #ff4cd8 100%);
-  content: "";
-  z-index: -1;
-  border-radius: 30px;
-  max-width: 710px;
-  font-size: 16px;
-  line-height: 20px;
-  color: #2b2b2b;
-  font-family: Mulish;
-  cursor: pointer;
-} */
-
 @media only screen and (max-width: 850px) {
   .component-image {
     display: none;
@@ -174,6 +132,9 @@
 }
 
 @media only screen and (max-width: 380px) {
+  .component-image {
+    display: none;
+  }
   .grounded-radiants {
     font-size: 12px;
     padding: 14px 22px;
@@ -183,5 +144,17 @@
     width: 100%;
     padding: 5px;
     margin-top: 0px;
+  }
+  .component-paper {
+    width: 100%;
+  }
+  .component-form {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .hidelines {
+    display: "none";
   }
 }

@@ -2,6 +2,8 @@ import React from "react";
 import GridComponent from "../../utilities/GridComponent";
 import { makeStyles } from "@material-ui/core/styles";
 import aboutus from "../../assets/images/aboutus.png";
+import Navbar from "../Wrapper/Navbar";
+import lines2 from "../../assets/images/lines2.png";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -54,6 +56,27 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
     filter: "drop-shadow(10px 24px 74px rgba(76, 115, 255, 0.15))",
   },
+
+  applyBackground: {
+    position: "absolute",
+    left: "100px",
+    [theme.breakpoints.only("lg")]: {
+      display: "none",
+    },
+    [theme.breakpoints.only("md")]: {
+      display: "none",
+    },
+    [theme.breakpoints.only("xl")]: {
+      left: "1160px",
+    },
+
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
+  },
+  imageLine: {
+    width: "90%",
+  },
 }));
 
 const ChildComponentA = () => {
@@ -89,11 +112,21 @@ const ChildComponentB = () => {
   );
 };
 
-const Top = () => (
-  <GridComponent
-    childComponentA={<ChildComponentA />}
-    childComponentB={<ChildComponentB />}
-  />
-);
+const Top = () => {
+  const classes = useStyles();
+  return (
+    <>
+      <div className={classes.applyBackground}>
+        <img src={lines2} className={classes.imageLine} />
+      </div>
+
+      <Navbar />
+      <GridComponent
+        childComponentA={<ChildComponentA />}
+        childComponentB={<ChildComponentB />}
+      />
+    </>
+  );
+};
 
 export default Top;

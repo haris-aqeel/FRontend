@@ -1,9 +1,11 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import "../../utilities/style.css";
+import lines3 from "../../assets/images/lines3.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    position: "relative",
     display: "flex",
     justifyContent: "space-around",
     alignItems: "center",
@@ -30,10 +32,11 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     maxWidth: "50vw",
+    zIndex: 10000,
+    background: "#fff",
     [theme.breakpoints.down("sm")]: {
       maxWidth: "100%",
       textAlign: "left",
-      // paddingLeft: theme.spacing(2),
     },
   },
 
@@ -120,12 +123,36 @@ const useStyles = makeStyles((theme) => ({
     },
     height: "auto",
   },
+  applyBackground: {
+    zIndex: "-2",
+    position: "absolute",
+    bottom: "-1px",
+    [theme.breakpoints.only("lg")]: {
+      display: "none",
+    },
+    [theme.breakpoints.only("md")]: {
+      display: "none",
+    },
+    [theme.breakpoints.only("xl")]: {
+      left: "100px",
+    },
+
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
+  },
+  imageLine: {
+    width: "72%",
+  },
 }));
 
 const Section6 = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
+      <div className={classes.applyBackground}>
+        <img src={lines3} className={classes.imageLine} />
+      </div>
       <div className={classes.upperBox}>
         Learn the Secrets to Maximize Your Results with GPS Academy’s EXCLUSIVE
         Training Series and Tools

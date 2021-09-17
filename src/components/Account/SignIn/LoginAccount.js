@@ -19,6 +19,22 @@ const useStyles = makeStyles((theme) => ({
     MozTextFillColor: "transparent",
     fontSize: "16px",
   },
+  button: {
+    background: "none!important",
+    border: "none",
+    padding: "0!important",
+    color: "#4C73FF",
+    cursor: "pointer",
+    position: "absolute",
+    left: "300px",
+    top: "20px",
+    // [theme.breakpoints.down("md")]: {
+    //   left: "180px",
+    // },
+    [theme.breakpoints.down("sm")]: {
+      left: "180px",
+    },
+  },
 }));
 const LoginAccountMain = () => {
   const classes = useStyles();
@@ -26,6 +42,7 @@ const LoginAccountMain = () => {
     userName: "",
     password: "",
   });
+  const [showPassword, setShowPassword] = useState(false);
 
   const submitForm = () => {};
 
@@ -81,6 +98,7 @@ const LoginAccountMain = () => {
                     </Grid>
                     <Grid
                       className={classes.marginTop}
+                      style={{ position: "relative" }}
                       item
                       xl={12}
                       md={12}
@@ -89,9 +107,19 @@ const LoginAccountMain = () => {
                       <Field
                         name="password"
                         label="Password"
-                        type="password"
+                        fullWidth
+                        type={showPassword ? "text" : "password"}
                         component={renderTextFieldEdit}
                       />{" "}
+                      {values.password && (
+                        <button
+                          type="button"
+                          className={classes.button}
+                          onClick={() => setShowPassword(!showPassword)}
+                        >
+                          {!showPassword ? "Show" : "Hide"}
+                        </button>
+                      )}
                     </Grid>
                     <Grid
                       className={classes.marginTop}

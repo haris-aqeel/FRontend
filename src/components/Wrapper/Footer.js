@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   responsivedisplay1: {
     display: "none",
-    marginTop: "70px",
+    marginTop: "120px",
     [theme.breakpoints.down("sm")]: {
       display: "inline-block",
     },
@@ -167,11 +167,11 @@ const ChildComponentB = () => {
             <br className={classes.breakLine} /> Covent Garden,
             <br className={classes.breakLine} /> London, United Kingdom,
             <br className={classes.breakLine} /> WC2H 9JQ
-            <br className={classes.breakLine} />
-            License no. 13621756
           </span>
         </li>
+        <li> License no. 13621756</li>
         <li
+          style={{ paddingBottom: "10px", marginRight: "8px" }}
           className={classes.responsivedisplay2}
           style={{ paddingBottom: "10px" }}
         >
